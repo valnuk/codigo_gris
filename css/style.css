@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+
+.active {
+    color: #e59eaf;
+}
+
+#avatar {
+    padding-top: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+#avatar img {
+    width: 100%;
+}
+
+#blog {
+    flex-grow: 1;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.circle {
+    border-radius: 50%;
+    display: block; /* la hacemos bloque para poder centrarla */
+    margin:  0 auto;
+    width: 100px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding-top: 3em;
+    width: 75%;
+}
+
+.container h2 {
+    font-size: 0.8em;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    padding-top: 3em;
+    text-align: center;
+}
+
+header {
+    background: #414f6f;
+    color: #CFD8DC;
+    font-size: 3em;
+    padding-bottom: 4vh;
+    padding-top: 4vh;
+    text-align: center;
+}
+
+.justify-left, .justify-left h2 {
+    text-align: left;
+}
+
+.justify-left li {
+    line-height: 2em;
+}
+
+nav {
+    background: #CFD8DC;
+    padding: 1em;
+    text-align: center;
+}
+
+nav a {
+    color: #414f6f;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #e59eaf;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1em;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8em;
+    line-height: 1.3em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+.porfolio-img {
+    flex-grow: 1;
+    padding-right: 1em;
+    text-align: center;
+}
+
+.porfolio-img img, iframe {
+    width: 100%;
+}
+
+.porfolio-img iframe {
+    height: 50vh;
+}
+
+.porfolio-img:last-child {
+    padding-right: 0;
+}
+
+#sidebar {
+    flex-basis: 25%;
+    flex-shrink: 0; 
+    margin-left: 1.5em;
+}
+
+small {
+    color: #414f6f;
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 560px) { /*versión móvil*/
+    
+    .container {
+        display: block;
+    }
+    
+    nav li {
+        line-height: 2em;
+    }
+    
+    #sidebar {
+        margin-left: 0;
+        margin-top: 3em;
+    }
+}
