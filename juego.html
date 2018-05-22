@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Código Gris</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/Sprites.js"></script>
+		<script type="text/javascript" src="js/Entidad.js"></script>
+		<script type="text/javascript" src="js/EntidadNave.js"></script>
+		<script type="text/javascript" src="js/EntidadDisparo.js"></script>
+		<script type="text/javascript" src="js/EntidadAlien.js"></script>
+		<script type="text/javascript" src="js/Juego.js"></script>
+		<script>
+			var temporizador;
+			var juego;
+			function inicio(){
+				juego=new Juego();
+				
+				//Enlazamos los eventos de teclado
+				document.onkeydown=function(e){
+					juego.pulsarTecla(e);
+				};
+				document.onkeyup=function(e){
+					juego.soltarTecla(e);
+				};
+				
+				juego.constructor("contexto");
+				temporizador=setInterval("juego.controlLoop();",25);
+			}
+			function log(texto,nueva){
+				var capa=document.getElementById("log");
+				if (nueva)
+					capa.innerHTML+="<br/>"+texto;
+				else
+					capa.innerHTML=texto;
+			}
+			function parar(){
+				clearInterval(temporizador);
+			}
+		</script>
+	</head>
+
+	<body onload="inicio();">
+	  <header>
+            <h1>Código Gris</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Sobre nosotros</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#" class="active">Juego</a></li>
+                <li><a href="inspiration.html">Inspiración</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="http://easdvalencia.com" target="_blank">EASD</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <article id="juego">
+                <canvas id="contexto"></canvas>
+                <br/>
+                <ul>
+                  <li><code>Cursores</code> para mover la nave de izquierda a derecha.
+                  <li><code>Espacio</code> para disparar.
+                  <li><code>Enter</code> para empezar de nuevo cuando finalice la partida.
+                </ul>
+                <button onclick="parar();">Parar</button>
+                <div id="log"></div>
+            </article>
+        </div>
+	</body>
+</html>
